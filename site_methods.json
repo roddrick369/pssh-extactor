@@ -1,0 +1,10 @@
+{
+    "abc.com": {
+        "method": "har",
+        "notes": "requires session headers"
+    },
+    "xyz.com": {
+        "method": "m3u8",
+        "notes": "pssh found in stream_0.m3u8"
+    }
+}
