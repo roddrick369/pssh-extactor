@@ -16,3 +16,27 @@ def load_site_mapping() -> dict:
         site_mapping = json.load(f)
 
     return site_mapping
+
+def get_method_for_site(domain: str) -> dict:
+    """
+    Returns the method config for a given domain from the JSON file.
+    If not found, return a default dict with method = "auto".
+
+    Args:
+        domain (str): The domain for which to get the method.
+
+    Returns:
+        dict: A dictionary containing the method for the domain.
+    """
+    # Load the site mapping
+    site_mapping = load_site_mapping()
+
+    # Check if the domain is in the site mapping
+    if domain in site_mapping:
+        return site_mapping[domain]
+    
+    # If not found, return a default dict
+    return {
+        "method": "auto",
+        "notes": "not mapped yet"
+    }
