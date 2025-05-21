@@ -11,6 +11,10 @@ def load_site_mapping() -> dict:
     # Define the path to the site mapping file
     site_mapping_path = Path(__file__).parent.parent / "site_mapping.json"
 
+    # Check if the file exists
+    if not site_mapping_path.exists():
+        site_mapping.path.write_text("{}")
+
     # Load the site mapping from the JSON file
     with open(site_mapping_path, 'r') as f:
         site_mapping = json.load(f)
