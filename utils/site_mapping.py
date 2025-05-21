@@ -9,7 +9,7 @@ def load_site_mapping() -> dict:
         dict: A dictionary containing the site mapping.
     """
     # Define the path to the site mapping file
-    site_mapping_path = Path(__file__).parent / "site_mapping.json"
+    site_mapping_path = Path(__file__).parent.parent / "site_mapping.json"
 
     # Load the site mapping from the JSON file
     with open(site_mapping_path, 'r') as f:
